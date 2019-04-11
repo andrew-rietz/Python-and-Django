@@ -42,8 +42,8 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
             <a class="nav-item nav-link" href="#">Resume<span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="#">Projects</a>
-            <a class="nav-item nav-link" href="#">Blog</a>
+            <a class="nav-item nav-link" href="#">Projects</a>
+            <a class="nav-item nav-link active" href="#">Blog</a>
           </div>
         </div>
       </nav>
@@ -51,39 +51,32 @@
 
 <main role="main">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Hi, I'm Andrew</h1>
-      <p class="lead text-muted">Hey - I'm Andrew and I'm learning to make a website in Django with Python! This site is a place for me to host my projects and write blog posts.</p>
-      <p>
-        <a href="mailto:andrew.rietz@gmail.com" class="btn btn-primary my-2">Email Me</a>
-      </p>
-    </div>
-  </section>
+  <div class="container">
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-
-        {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ job.image.url }}"</img>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">9 mins</small>
-              </div>
-            </div>
+    <h1 class="text-center pt-3">THIS IS THE BLOG</h1>
+    <br />
+    <br />
+    <h2>Latest Posts</h2>
+    <hr />
+    <div class="row">
+      {% for blog in blogs.all %}
+      <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{{ blog.title }}</h3>
+            <div class="mb-1 text-muted">{{ blog.pub_date_pretty }}</div>
+            <p class="mb-auto">{{ blog.summary }}</p>
+            <a href="#" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img width="200" height="250" preserveAspectRatio="xMidYMid slice" focusable="false" src={{blog.image.url}}></img>
           </div>
         </div>
-        {% endfor %}
-
       </div>
+    {% endfor %}
     </div>
-  </div>
 
+  </div>
 </main>
 
 <footer class="text-muted">
