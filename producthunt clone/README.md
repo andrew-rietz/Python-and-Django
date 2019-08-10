@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # Python-and-Django
-=======
+***
 # django_producthunt
 
 
@@ -17,4 +16,3 @@ Pages:
  - Product Details
  
 Uses a Postgres db and makes use of some open-source graphics (iconic, flaticon)
->>>>>>> remoteOrig/master
